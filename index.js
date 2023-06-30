@@ -5,7 +5,7 @@ const time = document.getElementById("time")
 const startButton = document.getElementById("startButton")
 
 let recordsPoints = localStorage.record || 0
-let seconds = 1
+let seconds = 10
 let count = 0
 
 function start(){
