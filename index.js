@@ -5,7 +5,7 @@ const time = document.getElementById("time")
 const startButton = document.getElementById("startButton")
 
 let recordsPoints = localStorage.record || 0
-let seconds = 10
+let seconds = 1
 let count = 0
 
 function start(){
@@ -46,6 +46,10 @@ function endGame(){
         conejo.classList.add("stop")
     })
     seconds = 0
+    resetButton.addEventListener("click", () =>{
+        location.reload()
+    })
+    
     if(localStorage.getItem("record") === null){
        return localStorage.setItem("record", recordsPoints)
     }
@@ -53,10 +57,6 @@ function endGame(){
        return localStorage.setItem("record", recordsPoints)
     }
 
-    resetButton.addEventListener("click", () =>{
-        location.reload()
-    })
-    
 }
 
 startButton.addEventListener("click",start)
